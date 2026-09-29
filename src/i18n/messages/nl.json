@@ -11,6 +11,14 @@
     "heroSubtitle": "Ontwerp, financiering en installatie binnen 90 dagen. Bespaar tot R$ 612 per maand op je stroomrekening en verhoog de waarde van je huis met tot 8%.",
     "heroPrimaryCta": "Bereken mijn besparing",
     "heroSecondaryCta": "Bekijk hoe het werkt",
+    "hero": {
+      "chapters": [
+        { "eyebrow": "Stap 01", "title": "Ontwerp op maat", "body": "Wij modelleren uw dak in 3D, simuleren de instraling en stellen de exacte paneelindeling voor — vóór u tekent." },
+        { "eyebrow": "Stap 02", "title": "Slimme financiering", "body": "Termijnen gelijk aan of lager dan uw huidige stroomrekening, met 90 dagen aflossingsvrij." },
+        { "eyebrow": "Stap 03", "title": "Gecertificeerde installatie", "body": "Eigen CREA-gecertificeerd team. Installatie in 2–5 dagen, geen dakwerk, geen stroomonderbreking." },
+        { "eyebrow": "Stap 04", "title": "Bespaar elke maand", "body": "Realtime monitoring. 25 jaar lineaire garantie. Uw rekening, bijna nul." }
+      ]
+    },
     "stat1Value": "R$ 612",
     "stat1Label": "Gemiddelde maandelijkse besparing",
     "stat2Value": "8 jaar",

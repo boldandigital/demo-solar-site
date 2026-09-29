@@ -11,6 +11,14 @@
     "heroSubtitle": "Design, financing and installation in under 90 days. Save up to R$ 612 a month on your electricity bill and increase your home's value by up to 8%.",
     "heroPrimaryCta": "Calculate my savings",
     "heroSecondaryCta": "See how it works",
+    "hero": {
+      "chapters": [
+        { "eyebrow": "Step 01", "title": "Tailored design", "body": "We model your roof in 3D, simulate the irradiance and propose the exact panel layout — before you sign." },
+        { "eyebrow": "Step 02", "title": "Smart financing", "body": "Installments equal to or lower than your current electricity bill, with a 90-day grace period." },
+        { "eyebrow": "Step 03", "title": "Certified install", "body": "In-house CREA-certified crew. 2–5 day install, no roof work, no power cut." },
+        { "eyebrow": "Step 04", "title": "Save every month", "body": "Real-time monitoring. 25-year linear warranty. Your bill, near zero." }
+      ]
+    },
     "stat1Value": "R$ 612",
     "stat1Label": "Average monthly savings",
     "stat2Value": "8 years",

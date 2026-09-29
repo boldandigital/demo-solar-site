@@ -1,6 +1,6 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { HeroSelector } from "@/components/hero/HeroSelector";
+import SolarHero from "@/components/hero-video/solar-hero";
 import { NarrativeSteps } from "@/components/sections/NarrativeSteps";
 import { SavingsCalculator } from "@/components/sections/SavingsCalculator";
 import { QuoteCTA } from "@/components/ui/QuoteCTA";
@@ -21,7 +21,7 @@ export default async function HomePage({ params }: Props) {
     <>
       {/* Hero — pinned visual layer + scroll-revealed copy overlay */}
       <div className="relative">
-        <HeroSelector sectionId="hero" />
+        <SolarHero sectionId="hero" locale={locale as "en" | "nl" | "pt-BR"} />
 
         {/* Copy overlay anchored bottom-left */}
         <div className="pointer-events-none absolute inset-0 z-10 flex flex-col justify-end pb-16 sm:pb-24">

@@ -11,6 +11,14 @@
     "heroSubtitle": "Projeto, financiamento e instalação em até 90 dias. Economize até R$ 612 por mês na conta de luz e valorize seu imóvel em até 8%.",
     "heroPrimaryCta": "Calcular minha economia",
     "heroSecondaryCta": "Ver como funciona",
+    "hero": {
+      "chapters": [
+        { "eyebrow": "Passo 01", "title": "Projeto sob medida", "body": "Modelamos seu telhado em 3D, simulamos a irradiação e propomos o layout exato dos painéis — antes de você assinar." },
+        { "eyebrow": "Passo 02", "title": "Financiamento inteligente", "body": "Parcela igual ou menor que sua conta de luz, com carência de 90 dias." },
+        { "eyebrow": "Passo 03", "title": "Instalação certificada", "body": "Equipe própria certificada CREA. Instalação em 2–5 dias, sem obra no telhado, sem corte de luz." },
+        { "eyebrow": "Passo 04", "title": "Economize todo mês", "body": "Monitoramento em tempo real. Garantia linear de 25 anos. Sua conta, quase zero." }
+      ]
+    },
     "stat1Value": "R$ 612",
     "stat1Label": "Economia média mensal",
     "stat2Value": "8 anos",
