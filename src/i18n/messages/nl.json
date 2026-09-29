@@ -170,7 +170,15 @@
     "addressTitle": "Waar we zijn",
     "addressLine1": "Av. Brigadeiro Faria Lima, 3477",
     "addressLine2": "Itaim Bibi, São Paulo / SP",
-    "addressLine3": "Postcode 04538-133"
+    "addressLine3": "Postcode 04538-133",
+    "serviceArea": {
+      "eyebrow": "Dekkingsgebied",
+      "heading": "We installeren in 12 staten in Brazilië.",
+      "lede": "Van het noordoosten tot het zuiden: ons eigen team dekt de regio's met de hoogste residentiële zonne-energie adoptie.",
+      "mapAriaLabel": "Kaart van Brazilië met de 12 staten waar Solaria Brasil residentiële zonnestelsels installeert",
+      "coverageLabel": "Actieve dekking",
+      "footnote": "Andere staten op aanvraag — praat met een specialist via WhatsApp."
+    }
   },
   "cta": {
     "label": "Chat op WhatsApp",

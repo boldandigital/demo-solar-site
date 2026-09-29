@@ -3,6 +3,13 @@
 import { useState, useMemo } from "react";
 import { useTranslations } from "next-intl";
 import { QuoteCTA } from "@/components/ui/QuoteCTA";
+import {
+  STATES,
+  ROOF_TYPES,
+  computeSavings,
+  formatBRL,
+  type RoofType,
+} from "@/lib/solar-math";
 
 /**
  * SavingsCalculator — interactive R$ estimate.
@@ -18,123 +25,19 @@ import { QuoteCTA } from "@/components/ui/QuoteCTA";
  *   - monthly savings (R$)
  *   - 25-year savings (R$, present value @ 6% discount)
  *
- * Tariff averages are illustrative defaults — not real quotes. The CTA
- * routes to WhatsApp with a pre-filled payload so the venue can quote
- * accurately.
- *
- * Tariff factors per UF (R$/kWh, average residential 2025) are a rough
- * approximation — fine for a demo calculator, NOT a regulatory source.
+ * The actual financial model lives in `lib/solar-math.ts` (testable,
+ * framework-free). This file is just the UI shell.
  */
-type State = {
-  id: string;
-  name: string;
-  tariff: number; // R$/kWh
-  sunHours: number; // h/day equivalent
-};
-
-const STATES: State[] = [
-  { id: "SP", name: "São Paulo", tariff: 0.92, sunHours: 4.6 },
-  { id: "RJ", name: "Rio de Janeiro", tariff: 1.05, sunHours: 4.5 },
-  { id: "MG", name: "Minas Gerais", tariff: 0.88, sunHours: 5.0 },
-  { id: "BA", name: "Bahia", tariff: 0.85, sunHours: 5.4 },
-  { id: "PR", name: "Paraná", tariff: 0.89, sunHours: 4.7 },
-  { id: "RS", name: "Rio Grande do Sul", tariff: 0.91, sunHours: 4.5 },
-  { id: "SC", name: "Santa Catarina", tariff: 0.93, sunHours: 4.4 },
-  { id: "PE", name: "Pernambuco", tariff: 0.87, sunHours: 5.3 },
-  { id: "CE", name: "Ceará", tariff: 0.84, sunHours: 5.5 },
-  { id: "GO", name: "Goiás", tariff: 0.86, sunHours: 5.2 },
-  { id: "DF", name: "Distrito Federal", tariff: 0.83, sunHours: 5.3 },
-  { id: "ES", name: "Espírito Santo", tariff: 0.9, sunHours: 4.8 },
-];
-
-const ROOF_TYPES = [
-  { id: "laje", label: "Laje / Solo" },
-  { id: "ceramico", label: "Telhado cerâmico" },
-  { id: "metalico", label: "Telhado metálico" },
-  { id: "fibrocimento", label: "Fibrocimento" },
-] as const;
-
-type RoofType = (typeof ROOF_TYPES)[number]["id"];
-
-const ROOF_EFFICIENCY: Record<RoofType, number> = {
-  laje: 1.0,
-  ceramico: 0.95,
-  metalico: 0.97,
-  fibrocimento: 0.93,
-};
-
-const DISCOUNT_RATE = 0.06;
-const PANEL_WATT = 550; // Wp per panel
-const PANEL_PRICE_PER_Wp = 4.5; // R$/Wp installed
-
-function formatBRL(value: number, max = 0): string {
-  return value.toLocaleString("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-    minimumFractionDigits: 0,
-    maximumFractionDigits: max,
-  });
-}
-
 export function SavingsCalculator() {
   const t = useTranslations("calculator");
   const [bill, setBill] = useState(800);
   const [stateId, setStateId] = useState("SP");
   const [roof, setRoof] = useState<RoofType>("ceramico");
 
-  const result = useMemo(() => {
-    const st = STATES.find((s) => s.id === stateId) ?? STATES[0];
-    const efficiency = ROOF_EFFICIENCY[roof];
-
-    // kWh consumed per month from bill
-    const kwhPerMonth = bill / st.tariff;
-    // Required PV generation to offset (with 80% self-consumption typical)
-    const selfConsumptionRate = 0.8;
-    const requiredKwh = kwhPerMonth * selfConsumptionRate;
-    // kWp needed (1 kWp ≈ STC sun-hours per day × 30 days × efficiency)
-    const kwpNeeded =
-      requiredKwh / (st.sunHours * 30 * efficiency);
-
-    // System cost
-    const cost = kwpNeeded * 1000 * PANEL_PRICE_PER_Wp;
-
-    // Payback years (assuming 1% tariff inflation, 0.5% panel degradation)
-    const annualGeneration = kwpNeeded * st.sunHours * 365 * 0.8;
-    const yearOneRevenue = annualGeneration * st.tariff;
-    const escalation = 1.01;
-    const degradation = 0.995;
-    let paybackYears = 0;
-    let cumulative = 0;
-    for (let y = 1; y <= 30; y++) {
-      cumulative += yearOneRevenue * Math.pow(escalation, y - 1) * Math.pow(degradation, y - 1);
-      if (cumulative >= cost) {
-        paybackYears = y;
-        break;
-      }
-    }
-    if (paybackYears === 0) paybackYears = 30;
-
-    // Monthly savings in year 1
-    const monthlySavings = (yearOneRevenue / 12);
-
-    // 25-year NPV
-    let npv = -cost;
-    for (let y = 1; y <= 25; y++) {
-      npv +=
-        (yearOneRevenue * Math.pow(escalation, y - 1) * Math.pow(degradation, y - 1)) /
-        Math.pow(1 + DISCOUNT_RATE, y);
-    }
-
-    return {
-      kwp: kwpNeeded,
-      cost,
-      paybackYears,
-      monthlySavings,
-      npv,
-      panels: Math.ceil((kwpNeeded * 1000) / PANEL_WATT),
-      state: st,
-    };
-  }, [bill, stateId, roof]);
+  const result = useMemo(
+    () => computeSavings({ bill, stateId, roof }),
+    [bill, stateId, roof]
+  );
 
   return (
     <section className="relative mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32">

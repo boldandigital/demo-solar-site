@@ -170,7 +170,15 @@
     "addressTitle": "Where we are",
     "addressLine1": "Av. Brigadeiro Faria Lima, 3477",
     "addressLine2": "Itaim Bibi, São Paulo / SP",
-    "addressLine3": "ZIP 04538-133"
+    "addressLine3": "ZIP 04538-133",
+    "serviceArea": {
+      "eyebrow": "Coverage area",
+      "heading": "We install in 12 states across Brazil.",
+      "lede": "From the Northeast to the South, our in-house crew covers the regions with the highest residential solar adoption.",
+      "mapAriaLabel": "Map of Brazil with the 12 states where Solaria Brasil installs residential solar systems",
+      "coverageLabel": "Active coverage",
+      "footnote": "Other states on request — talk to a specialist on WhatsApp."
+    }
   },
   "cta": {
     "label": "Chat on WhatsApp",

@@ -3,33 +3,25 @@
 import { useState, useMemo } from "react";
 import { useTranslations } from "next-intl";
 import { QuoteCTA } from "@/components/ui/QuoteCTA";
+import { estimateQuick, STATES } from "@/lib/solar-math";
 
 /**
  * QuoteEstimator — quick 2-input estimator for the contact page.
  * Lighter than the full calculator; lets prospects see a rough number
  * before filling in the form or opening WhatsApp.
+ *
+ * Math comes from `lib/solar-math.estimateQuick` — the task-brief formula
+ * (`savings ≈ bill × 0.85`, `payback ≈ cost / (savings × 12)`).
  */
-const STATES: Record<string, { name: string; tariff: number }> = {
-  SP: { name: "São Paulo", tariff: 0.92 },
-  RJ: { name: "Rio de Janeiro", tariff: 1.05 },
-  MG: { name: "Minas Gerais", tariff: 0.88 },
-  BA: { name: "Bahia", tariff: 0.85 },
-  PR: { name: "Paraná", tariff: 0.89 },
-};
-
 export function QuoteEstimator() {
   const t = useTranslations("contact");
   const [bill, setBill] = useState(800);
   const [state, setState] = useState("SP");
 
-  const estimate = useMemo(() => {
-    const st = STATES[state] ?? STATES.SP;
-    const kwh = bill / st.tariff;
-    const kwp = (kwh * 0.8) / (4.8 * 30);
-    const cost = kwp * 1000 * 4.5;
-    const savings = bill * 0.85;
-    return { kwp, cost, savings, state: st };
-  }, [bill, state]);
+  const estimate = useMemo(
+    () => estimateQuick({ bill, stateId: state }),
+    [bill, state]
+  );
 
   return (
     <section className="border-t border-border bg-muted">
@@ -83,8 +75,8 @@ export function QuoteEstimator() {
                 onChange={(e) => setState(e.target.value)}
                 className="mt-2 h-11 w-full rounded-lg border border-border bg-background px-4 text-sm text-foreground focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/30"
               >
-                {Object.entries(STATES).map(([id, s]) => (
-                  <option key={id} value={id}>
+                {STATES.map((s) => (
+                  <option key={s.id} value={s.id}>
                     {s.name}
                   </option>
                 ))}
@@ -111,7 +103,7 @@ export function QuoteEstimator() {
               </p>
               <p className="mt-2 text-2xl font-semibold tabular-nums text-brand-green">
                 R${" "}
-                {Math.round(estimate.savings).toLocaleString("pt-BR")}
+                {Math.round(estimate.monthlySavings).toLocaleString("pt-BR")}
               </p>
             </div>
             <div className="rounded-xl border border-border bg-surface p-5">

@@ -170,7 +170,15 @@
     "addressTitle": "Onde estamos",
     "addressLine1": "Av. Brigadeiro Faria Lima, 3477",
     "addressLine2": "Itaim Bibi, São Paulo / SP",
-    "addressLine3": "CEP 04538-133"
+    "addressLine3": "CEP 04538-133",
+    "serviceArea": {
+      "eyebrow": "Área de atuação",
+      "heading": "Atendemos em 12 estados do Brasil.",
+      "lede": "Do Nordeste ao Sul, nossa equipe própria cobre as regiões com maior adesão à energia solar residencial.",
+      "mapAriaLabel": "Mapa do Brasil com os 12 estados onde a Solaria Brasil instala sistemas solares residenciais",
+      "coverageLabel": "Estados atendidos",
+      "footnote": "Outros estados sob consulta — fale com um especialista no WhatsApp."
+    }
   },
   "cta": {
     "label": "Falar no WhatsApp",

@@ -2,6 +2,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { QuoteCTA } from "@/components/ui/QuoteCTA";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { QuoteEstimator } from "@/components/sections/QuoteEstimator";
+import { ServiceAreaMap } from "@/components/sections/ServiceAreaMap";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -82,6 +83,9 @@ export default async function ContactPage({ params }: Props) {
 
       {/* Quick quote estimator (mini-calculator) */}
       <QuoteEstimator />
+
+      {/* Service area map — coverage across Brazil */}
+      <ServiceAreaMap />
     </>
   );
 }
