@@ -153,7 +153,16 @@
     "perMonth": "/mês",
     "years": "anos",
     "disclaimer": "Estimativa ilustrativa. Tarifa média, irradiação típica e autossuficiência de 80%. Cotação real depende da conta e do telhado.",
-    "quoteCta": "Quero esse orçamento preciso"
+    "quoteCta": "Quero esse orçamento preciso",
+    "roofTypes": {
+      "laje": { "label": "Laje / Solo" },
+      "ceramico": { "label": "Telhado cerâmico" },
+      "metalico": { "label": "Telhado metálico" },
+      "fibrocimento": { "label": "Fibrocimento" }
+    },
+    "quoteMessage": {
+      "template": "Olá! Minha conta de luz é R$ {bill} e moro em {state}. Sistema estimado: {kwp} kWp. Quero um orçamento preciso!"
+    }
   },
   "contact": {
     "title": "Vamos conversar?",
@@ -171,6 +180,16 @@
     "addressLine1": "Av. Brigadeiro Faria Lima, 3477",
     "addressLine2": "Itaim Bibi, São Paulo / SP",
     "addressLine3": "CEP 04538-133",
+    "estimator": {
+      "eyebrow": "Estimativa rápida",
+      "heading": "Quanto você vai economizar?",
+      "billLabel": "Conta de luz mensal",
+      "stateLabel": "Estado",
+      "systemLabel": "Sistema",
+      "savingsLabel": "Economia/mês",
+      "investmentLabel": "Investimento",
+      "whatsappTemplate": "Olá! Estimativa rápida: conta R$ {bill}, sistema {kwp} kWp em {state}. Quero orçamento detalhado!"
+    },
     "serviceArea": {
       "eyebrow": "Área de atuação",
       "heading": "Atendemos em 12 estados do Brasil.",

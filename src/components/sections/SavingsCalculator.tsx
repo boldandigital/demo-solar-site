@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { QuoteCTA } from "@/components/ui/QuoteCTA";
 import {
   STATES,
@@ -27,9 +27,20 @@ import {
  *
  * The actual financial model lives in `lib/solar-math.ts` (testable,
  * framework-free). This file is just the UI shell.
+ *
+ * Locale handling:
+ *   - Roof-type labels come from next-intl (`calculator.roofTypes.<id>.label`)
+ *     rather than `solar-math.ROOF_TYPES[].label`, keeping the data layer
+ *     free of UI strings.
+ *   - Tariff and slider-endpoint rendering uses `Intl.NumberFormat(locale, …)`
+ *     so EN shows "0.92" and pt-BR/NL show "0,92".
+ *   - WhatsApp message comes from `calculator.quoteMessage.template`
+ *     with ICU placeholders for `{bill}`, `{state}`, `{kwp}`.
  */
 export function SavingsCalculator() {
   const t = useTranslations("calculator");
+  const tQuote = useTranslations("calculator.quoteMessage");
+  const locale = useLocale();
   const [bill, setBill] = useState(800);
   const [stateId, setStateId] = useState("SP");
   const [roof, setRoof] = useState<RoofType>("ceramico");
@@ -38,6 +49,20 @@ export function SavingsCalculator() {
     () => computeSavings({ bill, stateId, roof }),
     [bill, stateId, roof]
   );
+
+  // Locale-aware decimal formatter — used for tariff + slider endpoints.
+  const decFmt = new Intl.NumberFormat(locale, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+  const sliderMin = decFmt.format(200);
+  const sliderMax = decFmt.format(2500);
+
+  const whatsappMessage = tQuote("template", {
+    bill: decFmt.format(bill),
+    state: result.state.name,
+    kwp: result.kwp.toFixed(1),
+  });
 
   return (
     <section className="relative mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32">
@@ -80,8 +105,8 @@ export function SavingsCalculator() {
               className="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-border accent-[var(--brand-green)]"
             />
             <div className="mt-2 flex justify-between text-xs text-muted-foreground">
-              <span>R$ 200</span>
-              <span>R$ 2.500</span>
+              <span>R$ {sliderMin}</span>
+              <span>R$ {sliderMax}</span>
             </div>
           </div>
 
@@ -101,7 +126,7 @@ export function SavingsCalculator() {
             >
               {STATES.map((s) => (
                 <option key={s.id} value={s.id}>
-                  {s.name} · {s.tariff.toFixed(2).replace(".", ",")}/kWh
+                  {s.name} · {decFmt.format(s.tariff)}/kWh
                 </option>
               ))}
             </select>
@@ -124,7 +149,7 @@ export function SavingsCalculator() {
                       : "border-border text-muted-foreground hover:border-foreground/40"
                   }`}
                 >
-                  {r.label}
+                  {t(`roofTypes.${r.id}.label`)}
                 </button>
               ))}
             </div>
@@ -179,7 +204,7 @@ export function SavingsCalculator() {
           {t("disclaimer")}
         </p>
         <QuoteCTA
-          message={`Olá! Minha conta de luz é R$ ${bill} e moro em ${result.state.name}. Sistema estimado: ${result.kwp.toFixed(1)} kWp. Quero um orçamento preciso!`}
+          message={whatsappMessage}
           label={t("quoteCta")}
         />
       </div>

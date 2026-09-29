@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { QuoteCTA } from "@/components/ui/QuoteCTA";
 import { estimateQuick, STATES } from "@/lib/solar-math";
 
@@ -12,9 +12,15 @@ import { estimateQuick, STATES } from "@/lib/solar-math";
  *
  * Math comes from `lib/solar-math.estimateQuick` — the task-brief formula
  * (`savings ≈ bill × 0.85`, `payback ≈ cost / (savings × 12)`).
+ *
+ * All user-facing strings live in next-intl under `contact.estimator`.
+ * Tariff and currency rendering uses `Intl.NumberFormat(locale, …)`
+ * so EN shows "0.92" and pt-BR/NL show "0,92".
  */
 export function QuoteEstimator() {
   const t = useTranslations("contact");
+  const tEst = useTranslations("contact.estimator");
+  const locale = useLocale();
   const [bill, setBill] = useState(800);
   const [state, setState] = useState("SP");
 
@@ -23,14 +29,35 @@ export function QuoteEstimator() {
     [bill, state]
   );
 
+  // Locale-aware decimal formatter for tariff/price rendering.
+  const decFmt = new Intl.NumberFormat(locale, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+  // Locale-aware integer-with-grouping formatter for currency (R$ prefix kept in source).
+  const intFmt = new Intl.NumberFormat(locale, {
+    maximumFractionDigits: 0,
+  });
+
+  // Slider endpoints rendered via Intl so EN shows "R$ 2,500" and
+  // pt-BR/NL show their conventions.
+  const sliderMin = decFmt.format(200);
+  const sliderMax = decFmt.format(2500);
+
+  const whatsappMessage = tEst("whatsappTemplate", {
+    bill: decFmt.format(bill),
+    kwp: estimate.kwp.toFixed(1),
+    state: estimate.state.name,
+  });
+
   return (
     <section className="border-t border-border bg-muted">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <p className="text-xs uppercase tracking-[0.3em] text-brand-green">
-          Estimativa rápida
+          {tEst("eyebrow")}
         </p>
         <h2 className="mt-2 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-          Quanto você vai economizar?
+          {tEst("heading")}
         </h2>
 
         <div className="mt-8 grid gap-6 md:grid-cols-[2fr_3fr]">
@@ -41,7 +68,7 @@ export function QuoteEstimator() {
                 htmlFor="quick-bill"
                 className="text-xs uppercase tracking-[0.25em] text-muted-foreground"
               >
-                Conta de luz mensal
+                {tEst("billLabel")}
               </label>
               <input
                 id="quick-bill"
@@ -54,11 +81,11 @@ export function QuoteEstimator() {
                 className="mt-2 h-2 w-full cursor-pointer appearance-none rounded-full bg-border accent-brand-green"
               />
               <div className="mt-1 flex justify-between text-xs text-muted-foreground">
-                <span>R$ 200</span>
+                <span>R$ {sliderMin}</span>
                 <span className="font-semibold text-foreground tabular-nums">
-                  R$ {bill}
+                  R$ {decFmt.format(bill)}
                 </span>
-                <span>R$ 2.500</span>
+                <span>R$ {sliderMax}</span>
               </div>
             </div>
 
@@ -67,7 +94,7 @@ export function QuoteEstimator() {
                 htmlFor="quick-state"
                 className="text-xs uppercase tracking-[0.25em] text-muted-foreground"
               >
-                Estado
+                {tEst("stateLabel")}
               </label>
               <select
                 id="quick-state"
@@ -77,7 +104,7 @@ export function QuoteEstimator() {
               >
                 {STATES.map((s) => (
                   <option key={s.id} value={s.id}>
-                    {s.name}
+                    {s.name} · {decFmt.format(s.tariff)}/kWh
                   </option>
                 ))}
               </select>
@@ -88,7 +115,7 @@ export function QuoteEstimator() {
           <div className="grid gap-3 sm:grid-cols-3">
             <div className="rounded-xl border border-border bg-surface p-5">
               <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
-                Sistema
+                {tEst("systemLabel")}
               </p>
               <p className="mt-2 text-2xl font-semibold tabular-nums text-foreground">
                 {estimate.kwp.toFixed(1)}{" "}
@@ -99,26 +126,24 @@ export function QuoteEstimator() {
             </div>
             <div className="rounded-xl border border-border bg-surface p-5">
               <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
-                Economia/mês
+                {tEst("savingsLabel")}
               </p>
               <p className="mt-2 text-2xl font-semibold tabular-nums text-brand-green">
-                R${" "}
-                {Math.round(estimate.monthlySavings).toLocaleString("pt-BR")}
+                R$ {intFmt.format(Math.round(estimate.monthlySavings))}
               </p>
             </div>
             <div className="rounded-xl border border-border bg-surface p-5">
               <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
-                Investimento
+                {tEst("investmentLabel")}
               </p>
               <p className="mt-2 text-2xl font-semibold tabular-nums text-foreground">
-                R${" "}
-                {Math.round(estimate.cost).toLocaleString("pt-BR")}
+                R$ {intFmt.format(Math.round(estimate.cost))}
               </p>
             </div>
 
             <div className="sm:col-span-3">
               <QuoteCTA
-                message={`Olá! Estimativa rápida: conta R$ ${bill}, sistema ${estimate.kwp.toFixed(1)} kWp em ${estimate.state.name}. Quero orçamento detalhado!`}
+                message={whatsappMessage}
                 label={t("whatsapp")}
                 variant="primary"
                 className="w-full sm:w-auto"

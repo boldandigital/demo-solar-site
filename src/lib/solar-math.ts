@@ -38,11 +38,11 @@ export const STATES: StateInfo[] = [
 
 export type RoofType = "laje" | "ceramico" | "metalico" | "fibrocimento";
 
-export const ROOF_TYPES: { id: RoofType; label: string }[] = [
-  { id: "laje", label: "Laje / Solo" },
-  { id: "ceramico", label: "Telhado cerâmico" },
-  { id: "metalico", label: "Telhado metálico" },
-  { id: "fibrocimento", label: "Fibrocimento" },
+export const ROOF_TYPES: { id: RoofType }[] = [
+  { id: "laje" },
+  { id: "ceramico" },
+  { id: "metalico" },
+  { id: "fibrocimento" },
 ];
 
 /** Mounting-efficiency multipliers per roof type. */

@@ -3,11 +3,16 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { QuoteCTA } from "@/components/ui/QuoteCTA";
+import { STATES } from "@/lib/solar-math";
 
 /**
  * ContactForm — captures lead intent and routes to WhatsApp with the form
  * payload pre-filled. No backend needed; the WhatsApp CTA is the actual
  * transport.
+ *
+ * The state <select> renders from the shared `STATES` list in
+ * `lib/solar-math.ts` so it stays in sync with the calculator's list
+ * (Brazilian state proper nouns are used unchanged across all 3 locales).
  */
 export function ContactForm() {
   const t = useTranslations("contact");
@@ -113,18 +118,11 @@ export function ContactForm() {
             onChange={(e) => setForm({ ...form, state: e.target.value })}
             className="mt-2 h-12 w-full rounded-lg border border-border bg-background px-4 text-base text-foreground focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/30"
           >
-            <option value="SP">São Paulo</option>
-            <option value="RJ">Rio de Janeiro</option>
-            <option value="MG">Minas Gerais</option>
-            <option value="BA">Bahia</option>
-            <option value="PR">Paraná</option>
-            <option value="RS">Rio Grande do Sul</option>
-            <option value="SC">Santa Catarina</option>
-            <option value="PE">Pernambuco</option>
-            <option value="CE">Ceará</option>
-            <option value="GO">Goiás</option>
-            <option value="DF">Distrito Federal</option>
-            <option value="ES">Espírito Santo</option>
+            {STATES.map((s) => (
+              <option key={s.id} value={s.id}>
+                {s.name}
+              </option>
+            ))}
           </select>
         </div>
       </div>

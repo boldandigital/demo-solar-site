@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { useState, useTransition } from "react";
@@ -18,6 +18,7 @@ export function Nav() {
   const t = useTranslations("nav");
   const tl = useTranslations("locale");
   const pathname = usePathname();
+  const locale = useLocale();
   const router = useRouter();
   const [, startTransition] = useTransition();
   const [open, setOpen] = useState(false);
@@ -93,7 +94,7 @@ export function Nav() {
               className="flex items-center gap-1 rounded-md border border-border px-2 py-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
             >
               <span aria-hidden>🌐</span>
-              <span className="uppercase">{(pathname.split("/")[1] || "pt-BR")}</span>
+              <span className="uppercase">{locale}</span>
               <span aria-hidden>▾</span>
             </button>
             {open && (

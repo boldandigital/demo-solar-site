@@ -153,7 +153,16 @@
     "perMonth": "/maand",
     "years": "jaar",
     "disclaimer": "Illustratieve schatting. Gemiddeld tarief, typische instraling en 80% zelfverbruik. Echte offerte hangt af van je rekening en dak.",
-    "quoteCta": "Vraag een nauwkeurige offerte"
+    "quoteCta": "Vraag een nauwkeurige offerte",
+    "roofTypes": {
+      "laje": { "label": "Plat / Grond" },
+      "ceramico": { "label": "Keramische pan" },
+      "metalico": { "label": "Metalen dak" },
+      "fibrocimento": { "label": "Vezelcement" }
+    },
+    "quoteMessage": {
+      "template": "Hallo! Mijn elektriciteitsrekening is R$ {bill} en ik woon in {state}. Geschat systeem: {kwp} kWp. Ik wil graag een exacte offerte!"
+    }
   },
   "contact": {
     "title": "Laten we praten?",
@@ -171,6 +180,16 @@
     "addressLine1": "Av. Brigadeiro Faria Lima, 3477",
     "addressLine2": "Itaim Bibi, São Paulo / SP",
     "addressLine3": "Postcode 04538-133",
+    "estimator": {
+      "eyebrow": "Snelle schatting",
+      "heading": "Hoeveel bespaar jij?",
+      "billLabel": "Gemiddelde elektriciteitsrekening",
+      "stateLabel": "Staat",
+      "systemLabel": "Systeem",
+      "savingsLabel": "Besparing/maand",
+      "investmentLabel": "Investering",
+      "whatsappTemplate": "Hallo! Snelle schatting: rekening R$ {bill}, systeem {kwp} kWp in {state}. Ik wil graag een gedetailleerde offerte!"
+    },
     "serviceArea": {
       "eyebrow": "Dekkingsgebied",
       "heading": "We installeren in 12 staten in Brazilië.",

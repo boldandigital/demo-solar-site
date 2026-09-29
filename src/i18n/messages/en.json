@@ -153,7 +153,16 @@
     "perMonth": "/month",
     "years": "years",
     "disclaimer": "Illustrative estimate. Average tariff, typical irradiation and 80% self-consumption. Real quote depends on your bill and roof.",
-    "quoteCta": "Get an accurate quote"
+    "quoteCta": "Get an accurate quote",
+    "roofTypes": {
+      "laje": { "label": "Flat / Ground" },
+      "ceramico": { "label": "Ceramic tile" },
+      "metalico": { "label": "Metal roof" },
+      "fibrocimento": { "label": "Fiber cement" }
+    },
+    "quoteMessage": {
+      "template": "Hi! My electricity bill is R$ {bill} and I live in {state}. Estimated system: {kwp} kWp. I'd like a precise quote!"
+    }
   },
   "contact": {
     "title": "Let's talk?",
@@ -171,6 +180,16 @@
     "addressLine1": "Av. Brigadeiro Faria Lima, 3477",
     "addressLine2": "Itaim Bibi, São Paulo / SP",
     "addressLine3": "ZIP 04538-133",
+    "estimator": {
+      "eyebrow": "Quick estimate",
+      "heading": "How much will you save?",
+      "billLabel": "Average electricity bill",
+      "stateLabel": "State",
+      "systemLabel": "System",
+      "savingsLabel": "Savings/month",
+      "investmentLabel": "Investment",
+      "whatsappTemplate": "Hi! Quick estimate: bill R$ {bill}, system {kwp} kWp in {state}. I'd like a detailed quote!"
+    },
     "serviceArea": {
       "eyebrow": "Coverage area",
       "heading": "We install in 12 states across Brazil.",
