@@ -1,0 +1,30 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": "Demo hero goes here",
+    "tagline": "Scroll narrative skeleton — neutral base for vertical demos."
+  },
+  "about": {
+    "title": "About",
+    "body": "Placeholder about page. Fork this skeleton to build a vertical-specific story."
+  },
+  "contact": {
+    "title": "Contact",
+    "body": "Placeholder contact page.",
+    "whatsapp": "Chat on WhatsApp"
+  },
+  "footer": {
+    "mark": "Bold & Digital",
+    "tagline": "Scroll narrative demos."
+  },
+  "locale": {
+    "switcher": "Language",
+    "en": "English",
+    "nl": "Nederlands",
+    "pt-BR": "Português (BR)"
+  }
+}

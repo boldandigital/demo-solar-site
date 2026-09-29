@@ -1,0 +1,30 @@
+{
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "contact": "Contato"
+  },
+  "home": {
+    "hero": "Demo hero aqui",
+    "tagline": "Esqueleto de narrativa de scroll — base neutra para demos verticais."
+  },
+  "about": {
+    "title": "Sobre",
+    "body": "Página sobre provisória. Faça fork deste esqueleto para construir uma história vertical específica."
+  },
+  "contact": {
+    "title": "Contato",
+    "body": "Página de contato provisória.",
+    "whatsapp": "Conversar no WhatsApp"
+  },
+  "footer": {
+    "mark": "Bold & Digital",
+    "tagline": "Demos de narrativa de scroll."
+  },
+  "locale": {
+    "switcher": "Idioma",
+    "en": "English",
+    "nl": "Nederlands",
+    "pt-BR": "Português (BR)"
+  }
+}

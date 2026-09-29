@@ -1,0 +1,30 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "Over ons",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": "Demo hero komt hier",
+    "tagline": "Scroll-verhaal skelet — neutrale basis voor verticale demos."
+  },
+  "about": {
+    "title": "Over ons",
+    "body": "Placeholder over-ons pagina. Fork dit skelet om een verticaal-specifiek verhaal te bouwen."
+  },
+  "contact": {
+    "title": "Contact",
+    "body": "Placeholder contactpagina.",
+    "whatsapp": "Chat op WhatsApp"
+  },
+  "footer": {
+    "mark": "Bold & Digital",
+    "tagline": "Scroll-verhaal demos."
+  },
+  "locale": {
+    "switcher": "Taal",
+    "en": "English",
+    "nl": "Nederlands",
+    "pt-BR": "Português (BR)"
+  }
+}
