@@ -5,77 +5,88 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ─────────────────────────────────────────────────────────────
-   Neutral palette tokens (locked per Captain's spec)
-   bg #FAFAFA · text #0A0A0A · borders #E5E5E5
+   Solaria Brasil palette (locked per Captain's spec)
+   Primary green #16A34A · Lime accent #84CC16 · Sun yellow #FACC15
+   Background #FFFFFF · Text #0A0A0A
    Dark mode toggled via [data-theme="dark"] OR class="dark" on <html>
+   Display: Space Grotesk · Body: IBM Plex Sans
    ───────────────────────────────────────────────────────────── */
 :root {
-  /* Override shadcn defaults with Captain's hex-locked values */
-  --background: #FAFAFA;
+  /* Solar palette */
+  --background: #FFFFFF;
   --foreground: #0A0A0A;
-  --border: #E5E5E5;
-  --muted: #F5F5F5;
+  --border: #E5E7EB;
+  --muted: #F4F7F0;
   --surface: #FFFFFF;
-  --accent: #0A0A0A;
-  --muted-foreground: #737373;
+  --accent: #16A34A;
+  --muted-foreground: #4B5563;
 
-  /* shadcn-required tokens — kept aligned with our palette */
+  /* Brand extension */
+  --brand-lime: #84CC16;
+  --brand-sun: #FACC15;
+  --brand-green: #16A34A;
+  --brand-green-dark: #15803D;
+
+  /* shadcn-required tokens aligned to solar palette */
   --card: #FFFFFF;
   --card-foreground: #0A0A0A;
   --popover: #FFFFFF;
   --popover-foreground: #0A0A0A;
-  --primary: #0A0A0A;
-  --primary-foreground: #FAFAFA;
-  --secondary: #F5F5F5;
+  --primary: #16A34A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F4F7F0;
   --secondary-foreground: #0A0A0A;
-  --accent-foreground: #FAFAFA;
+  --accent-foreground: #FFFFFF;
   --destructive: oklch(0.577 0.245 27.325);
-  --input: #E5E5E5;
-  --ring: #0A0A0A;
+  --input: #E5E7EB;
+  --ring: #16A34A;
   --radius: 0.625rem;
   --sidebar: #FFFFFF;
   --sidebar-foreground: #0A0A0A;
-  --sidebar-primary: #0A0A0A;
-  --sidebar-primary-foreground: #FAFAFA;
-  --sidebar-accent: #F5F5F5;
+  --sidebar-primary: #16A34A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F4F7F0;
   --sidebar-accent-foreground: #0A0A0A;
-  --sidebar-border: #E5E5E5;
-  --sidebar-ring: #0A0A0A;
-  --chart-1: #E5E5E5;
-  --chart-2: #A3A3A3;
-  --chart-3: #525252;
-  --chart-4: #404040;
-  --chart-5: #171717;
+  --sidebar-border: #E5E7EB;
+  --sidebar-ring: #16A34A;
+  --chart-1: #16A34A;
+  --chart-2: #84CC16;
+  --chart-3: #FACC15;
+  --chart-4: #15803D;
+  --chart-5: #4B5563;
 }
 
-/* Captain's specified dark-mode toggle (CSS-variable scheme) */
 :root[data-theme="dark"] {
   --background: #0A0A0A;
   --foreground: #FAFAFA;
-  --border: #262626;
-  --muted: #171717;
-  --surface: #171717;
-  --accent: #FAFAFA;
-  --muted-foreground: #A3A3A3;
-  --card: #171717;
+  --border: #1F2937;
+  --muted: #14181C;
+  --surface: #14181C;
+  --accent: #22C55E;
+  --muted-foreground: #9CA3AF;
+  --brand-lime: #A3E635;
+  --brand-sun: #FDE047;
+  --brand-green: #22C55E;
+  --brand-green-dark: #16A34A;
+  --card: #14181C;
   --card-foreground: #FAFAFA;
-  --popover: #171717;
+  --popover: #14181C;
   --popover-foreground: #FAFAFA;
-  --primary: #FAFAFA;
+  --primary: #22C55E;
   --primary-foreground: #0A0A0A;
-  --secondary: #262626;
+  --secondary: #1F2937;
   --secondary-foreground: #FAFAFA;
   --accent-foreground: #0A0A0A;
-  --input: #262626;
-  --ring: #FAFAFA;
-  --sidebar: #171717;
+  --input: #1F2937;
+  --ring: #22C55E;
+  --sidebar: #14181C;
   --sidebar-foreground: #FAFAFA;
-  --sidebar-primary: #FAFAFA;
+  --sidebar-primary: #22C55E;
   --sidebar-primary-foreground: #0A0A0A;
-  --sidebar-accent: #262626;
+  --sidebar-accent: #1F2937;
   --sidebar-accent-foreground: #FAFAFA;
-  --sidebar-border: #262626;
-  --sidebar-ring: #FAFAFA;
+  --sidebar-border: #1F2937;
+  --sidebar-ring: #22C55E;
 }
 
 @theme inline {
@@ -85,7 +96,12 @@
   --color-muted: var(--muted);
   --color-surface: var(--surface);
   --color-accent: var(--accent);
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --color-brand-lime: var(--brand-lime);
+  --color-brand-sun: var(--brand-sun);
+  --color-brand-green: var(--brand-green);
+  --color-brand-green-dark: var(--brand-green-dark);
+  --font-sans: var(--font-plex), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-grotesk), ui-sans-serif, system-ui, sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -128,14 +144,58 @@ body {
 }
 
 body {
-  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-plex), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "tnum", "ss01";
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-grotesk), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.025em;
+  font-weight: 600;
 }
 
 /* Reset default link colors to inherit so they match body */
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* Solar brand utilities — green/lime gradients + dot grid */
+.bg-brand-gradient {
+  background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-lime) 100%);
+}
+
+.bg-brand-gradient-radial {
+  background: radial-gradient(circle at 30% 50%, var(--brand-lime) 0%, var(--brand-green) 65%, var(--brand-green-dark) 100%);
+}
+
+.text-brand-gradient {
+  background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-lime) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.bg-dot-grid {
+  background-image: radial-gradient(circle at 1px 1px, var(--border) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Solar panel cell — subtle solar-cell texture for static fallback */
+.bg-solar-cells {
+  background:
+    linear-gradient(135deg, rgba(22,163,74,0.04) 0%, rgba(132,204,22,0.04) 100%),
+    repeating-linear-gradient(0deg, transparent 0px, transparent 22px, rgba(22,163,74,0.06) 22px, rgba(22,163,74,0.06) 23px),
+    repeating-linear-gradient(90deg, transparent 0px, transparent 22px, rgba(22,163,74,0.06) 22px, rgba(22,163,74,0.06) 23px);
+}
+
+/* Sun glow — radial accent used in hero */
+.bg-sun-glow {
+  background: radial-gradient(circle at 50% 50%, var(--brand-sun) 0%, transparent 60%);
+  opacity: 0.18;
 }
 
 /* Respect reduced motion — disable Lenis smooth scroll */

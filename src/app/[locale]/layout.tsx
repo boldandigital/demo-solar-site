@@ -25,8 +25,11 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "home" });
   return {
-    title: "scroll-shared",
-    description: t("tagline"),
+    title: {
+      default: "Solaria Brasil — Energia solar residencial",
+      template: "%s · Solaria Brasil",
+    },
+    description: t("heroSubtitle"),
   };
 }
 

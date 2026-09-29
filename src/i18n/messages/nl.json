@@ -1,25 +1,181 @@
 {
   "nav": {
     "home": "Home",
-    "about": "Over ons",
+    "howItWorks": "Hoe het werkt",
+    "calculator": "Calculator",
     "contact": "Contact"
   },
   "home": {
-    "hero": "Demo hero komt hier",
-    "tagline": "Scroll-verhaal skelet — neutrale basis voor verticale demos."
+    "heroEyebrow": "Residentiële zonne-energie",
+    "heroTitle": "Zonne-energie die past bij je budget.",
+    "heroSubtitle": "Ontwerp, financiering en installatie binnen 90 dagen. Bespaar tot R$ 612 per maand op je stroomrekening en verhoog de waarde van je huis met tot 8%.",
+    "heroPrimaryCta": "Bereken mijn besparing",
+    "heroSecondaryCta": "Bekijk hoe het werkt",
+    "stat1Value": "R$ 612",
+    "stat1Label": "Gemiddelde maandelijkse besparing",
+    "stat2Value": "8 jaar",
+    "stat2Label": "Typische terugverdientijd",
+    "stat3Value": "25 jaar",
+    "stat3Label": "Levensduur systeem",
+    "narrativeEyebrow": "Vier stappen. Eén systeem klaar.",
+    "narrativeHeading": "Van je eerste simulatie tot een rekening op nul.",
+    "narrative": {
+      "sectionEyebrow": "Vier stappen. Eén systeem klaar.",
+      "sectionHeading": "Van je eerste simulatie tot een rekening op nul.",
+      "design": {
+        "eyebrow": "Stap 01",
+        "title": "Op maat ontworpen",
+        "body": "Analyse van je rekening, de zonne-instraling van je stad en je dak. Je ontvangt een 3D-simulatie van het systeem voordat je tekent.",
+        "stat": "100%",
+        "statLabel": "Digitaal, geen bezoek verplicht"
+      },
+      "finance": {
+        "eyebrow": "Stap 02",
+        "title": "Toegankelijke financiering",
+        "body": "Termijnen gelijk aan of lager dan je huidige stroomrekening. 90 dagen aflossingsvrij en rentes vanaf 0,99% per maand.",
+        "stat": "0,99%",
+        "statLabel": "Rente vanaf"
+      },
+      "install": {
+        "eyebrow": "Stap 03",
+        "title": "Gecertificeerde installatie",
+        "body": "Eigen team met CREA-CA-certificering. Installatie in 2–5 dagen, zonder dakwerkzaamheden en zonder stroomonderbreking.",
+        "stat": "5 dagen",
+        "statLabel": "Typische installatie"
+      },
+      "save": {
+        "eyebrow": "Stap 04",
+        "title": "Besparing elke maand",
+        "body": "Realtime monitoring-app. Energiecredits automatisch verrekend op je rekening. 25 jaar lineaire garantie op de panelen.",
+        "stat": "25 jaar",
+        "statLabel": "Lineaire garantie"
+      }
+    },
+    "caseEyebrow": "Wie al installeerde",
+    "caseHeading": "Braziliaanse gezinnen besparen al met Solaria.",
+    "cases": {
+      "silva": {
+        "city": "São Paulo, SP",
+        "kwp": "8,2 kWp",
+        "savings": "R$ 612/maand",
+        "quote": "“Onze stroomrekening daalde in 60 dagen van R$ 980 naar R$ 368. De app laat alles in realtime zien.”"
+      },
+      "oliveira": {
+        "city": "Curitiba, PR",
+        "kwp": "6,4 kWp",
+        "savings": "R$ 488/maand",
+        "quote": "“De financiering paste in ons budget. Na 5 jaar had het systeem zichzelf terugverdiend en de rekening ging naar nul.”"
+      },
+      "souza": {
+        "city": "Salvador, BA",
+        "kwp": "10,1 kWp",
+        "savings": "R$ 745/maand",
+        "quote": "“Solaria regelde alles: ontwerp, goedkeuring door het energiebedrijf en monitoring. Wij betaalden en genoten.”"
+      }
+    },
+    "finalCtaTitle": "Klaar om je stroomrekening op nul te zetten?",
+    "finalCtaBody": "Simuleer in 60 seconden. Geen account, geen verplichting.",
+    "finalCtaButton": "Praat met een specialist"
   },
-  "about": {
-    "title": "Over ons",
-    "body": "Placeholder over-ons pagina. Fork dit skelet om een verticaal-specifiek verhaal te bouwen."
+  "howItWorks": {
+    "eyebrow": "Hoe het werkt",
+    "heading": "Zes stappen. Geen gedoe.",
+    "lede": "Van simulatie tot monitoring: wat er gebeurt tussen je eerste klik en je eerste nulrekening.",
+    "steps": {
+      "01": {
+        "number": "01",
+        "eyebrow": "Simulatie",
+        "title": "Jij simuleert online",
+        "body": "In 60 seconden, met je stroomrekening bij de hand, krijg je de systeemgrootte, de investering en de geschatte besparing.",
+        "duration": "≈ 1 min"
+      },
+      "02": {
+        "number": "02",
+        "eyebrow": "Bezoek",
+        "title": "Gratis dakinspectie",
+        "body": "Een ingenieur komt bij je thuis, valideert dakoriëntatie, structuur en de aansluitnorm van het energiebedrijf.",
+        "duration": "≈ 3 dagen"
+      },
+      "03": {
+        "number": "03",
+        "eyebrow": "Ontwerp",
+        "title": "3D-uitvoeringsontwerp",
+        "body": "Gedetailleerd ontwerp met paneelindeling, omvormer, stringbox en rekennota. Jij keurt goed vóór de installatie.",
+        "duration": "≈ 7 dagen"
+      },
+      "04": {
+        "number": "04",
+        "eyebrow": "Goedkeuring",
+        "title": "Goedkeuring door netbeheerder",
+        "body": "Wij regelen alle bureaucratie met de energieleverancier. Jij tekent alleen digitaal.",
+        "duration": "≈ 30 dagen"
+      },
+      "05": {
+        "number": "05",
+        "eyebrow": "Installatie",
+        "title": "Gecertificeerde installatie",
+        "body": "Eigen team, CREA-CA-gecertificeerd, NR-35 en NR-10. Installatie in 2–5 dagen zonder je stroom te onderbreken.",
+        "duration": "2–5 dagen"
+      },
+      "06": {
+        "number": "06",
+        "eyebrow": "Monitoring",
+        "title": "App + 25 jaar onderhoud",
+        "body": "Volg opwekking, besparing en status in realtime. Jaarlijks preventief onderhoud inbegrepen voor de hele levensduur.",
+        "duration": "25 jaar"
+      }
+    },
+    "ctaTitle": "Wil je elke stap in detail zien?",
+    "ctaBody": "Download onze 24-pagina PDF-gids met alles wat je moet weten vóór de installatie.",
+    "ctaButton": "Ontvang de gids via WhatsApp"
+  },
+  "calculator": {
+    "eyebrow": "Zonne-calculator",
+    "heading": "Hoeveel bespaar je per maand?",
+    "lede": "Sleep de slider naar je huidige stroomrekening. Wij passen staat en daktype aan voor een realistische schatting.",
+    "billLabel": "Je huidige stroomrekening",
+    "stateLabel": "Staat",
+    "roofLabel": "Daktype",
+    "outputEyebrow": "Je geschatte systeem",
+    "outputSize": "Systeemgrootte",
+    "outputSavings": "Maandelijkse besparing",
+    "outputPayback": "Geschatte terugverdientijd",
+    "outputNPV": "25-jaar besparing",
+    "panels": "panelen",
+    "perMonth": "/maand",
+    "years": "jaar",
+    "disclaimer": "Illustratieve schatting. Gemiddeld tarief, typische instraling en 80% zelfverbruik. Echte offerte hangt af van je rekening en dak.",
+    "quoteCta": "Vraag een nauwkeurige offerte"
   },
   "contact": {
-    "title": "Contact",
-    "body": "Placeholder contactpagina.",
-    "whatsapp": "Chat op WhatsApp"
+    "title": "Laten we praten?",
+    "body": "Menselijke ondersteuning maandag t/m zaterdag, 8u–20u. Antwoord binnen 15 minuten op WhatsApp.",
+    "whatsapp": "Open WhatsApp",
+    "whatsappMessage": "Hallo! Ik wil graag een offerte voor zonne-energie op mijn huis.",
+    "formTitle": "Of vul hier in",
+    "formName": "Naam",
+    "formPhone": "WhatsApp (met netnummer)",
+    "formBill": "Gemiddelde stroomrekening (R$)",
+    "formState": "Staat",
+    "formSubmit": "Verstuur en ontvang contact binnen 15 min",
+    "formSuccess": "Ontvangen! Binnen 15 minuten neemt een specialist contact op via je WhatsApp.",
+    "addressTitle": "Waar we zijn",
+    "addressLine1": "Av. Brigadeiro Faria Lima, 3477",
+    "addressLine2": "Itaim Bibi, São Paulo / SP",
+    "addressLine3": "Postcode 04538-133"
+  },
+  "cta": {
+    "label": "Chat op WhatsApp",
+    "defaultMessage": "Hallo! Ik wil graag een offerte voor zonne-energie op mijn huis."
   },
   "footer": {
-    "mark": "Bold & Digital",
-    "tagline": "Scroll-verhaal demos."
+    "tagline": "Residentiële zonne-energie die past bij je budget. Ontwerp, financiering en installatie binnen 90 dagen.",
+    "navLabel": "Solaria",
+    "contactLabel": "Contact",
+    "langLabel": "Taal",
+    "address": "São Paulo · SP · Brazilië",
+    "copyright": "© 2026 Solaria Brasil Energia Solar Ltda. CNPJ 00.000.000/0001-00.",
+    "credits": "Bold & Digital demo · Scroll-narrative framework"
   },
   "locale": {
     "switcher": "Taal",

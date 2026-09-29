@@ -2,7 +2,7 @@
 
 import { useSyncExternalStore, useCallback } from "react";
 
-const STORAGE_KEY = "scroll-shared-theme";
+const STORAGE_KEY = "solar-theme";
 const HTML = typeof document !== "undefined" ? document.documentElement : null;
 
 /** Read the current dark-mode state from the live DOM. */

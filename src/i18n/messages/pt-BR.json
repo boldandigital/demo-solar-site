@@ -1,25 +1,181 @@
 {
   "nav": {
     "home": "Início",
-    "about": "Sobre",
+    "howItWorks": "Como funciona",
+    "calculator": "Calculadora",
     "contact": "Contato"
   },
   "home": {
-    "hero": "Demo hero aqui",
-    "tagline": "Esqueleto de narrativa de scroll — base neutra para demos verticais."
+    "heroEyebrow": "Energia solar residencial",
+    "heroTitle": "Energia solar que cabe no seu bolso.",
+    "heroSubtitle": "Projeto, financiamento e instalação em até 90 dias. Economize até R$ 612 por mês na conta de luz e valorize seu imóvel em até 8%.",
+    "heroPrimaryCta": "Calcular minha economia",
+    "heroSecondaryCta": "Ver como funciona",
+    "stat1Value": "R$ 612",
+    "stat1Label": "Economia média mensal",
+    "stat2Value": "8 anos",
+    "stat2Label": "Payback típico",
+    "stat3Value": "25 anos",
+    "stat3Label": "Vida útil do sistema",
+    "narrativeEyebrow": "Quatro passos. Um sistema pronto.",
+    "narrativeHeading": "Da primeira simulação à luz zerada.",
+    "narrative": {
+      "sectionEyebrow": "Quatro passos. Um sistema pronto.",
+      "sectionHeading": "Da primeira simulação à luz zerada.",
+      "design": {
+        "eyebrow": "Passo 01",
+        "title": "Projeto sob medida",
+        "body": "Análise da conta, irradiação da sua cidade e do seu telhado. Você recebe uma simulação 3D do sistema antes de assinar.",
+        "stat": "100%",
+        "statLabel": "Digital, sem visita obrigatória"
+      },
+      "finance": {
+        "eyebrow": "Passo 02",
+        "title": "Financiamento acessível",
+        "body": "Parcela igual ou menor que sua conta de luz. Banco próprio com carência de 90 dias e taxa a partir de 0,99% a.m.",
+        "stat": "0,99%",
+        "statLabel": "Taxa a partir de"
+      },
+      "install": {
+        "eyebrow": "Passo 03",
+        "title": "Instalação certificada",
+        "body": "Equipe própria, CREA-CA certificado. Instalação em 2 a 5 dias, sem obra no telhado e sem desligamento da energia.",
+        "stat": "5 dias",
+        "statLabel": "Instalação típica"
+      },
+      "save": {
+        "eyebrow": "Passo 04",
+        "title": "Economia todo mês",
+        "body": "App de monitoramento em tempo real. Créditos de energia automaticamente compensados na fatura. Garantia de 25 anos nos painéis.",
+        "stat": "25 anos",
+        "statLabel": "Garantia linear"
+      }
+    },
+    "caseEyebrow": "Quem instalou",
+    "caseHeading": "Famílias brasileiras já economizam com Solaria.",
+    "cases": {
+      "silva": {
+        "city": "São Paulo, SP",
+        "kwp": "8,2 kWp",
+        "savings": "R$ 612/mês",
+        "quote": "“A conta de luz caiu de R$ 980 para R$ 368 em 60 dias. O app mostra tudo, em tempo real.”"
+      },
+      "oliveira": {
+        "city": "Curitiba, PR",
+        "kwp": "6,4 kWp",
+        "savings": "R$ 488/mês",
+        "quote": "“O financiamento cabia na nossa renda. Em 5 anos o sistema se pagou e a conta zerou.”"
+      },
+      "souza": {
+        "city": "Salvador, BA",
+        "kwp": "10,1 kWp",
+        "savings": "R$ 745/mês",
+        "quote": "“A Solaria cuidou de tudo: projeto, homologação na concessionária e o monitoramento. Só pagar e curtir.”"
+      }
+    },
+    "finalCtaTitle": "Pronto para zerar sua conta de luz?",
+    "finalCtaBody": "Simule em 60 segundos. Sem cadastro, sem compromisso.",
+    "finalCtaButton": "Falar com um especialista"
   },
-  "about": {
-    "title": "Sobre",
-    "body": "Página sobre provisória. Faça fork deste esqueleto para construir uma história vertical específica."
+  "howItWorks": {
+    "eyebrow": "Como funciona",
+    "heading": "Seis passos. Zero dor de cabeça.",
+    "lede": "Da simulação ao monitoramento: o que acontece entre o seu primeiro clique e a primeira fatura zerada.",
+    "steps": {
+      "01": {
+        "number": "01",
+        "eyebrow": "Simulação",
+        "title": "Você simula online",
+        "body": "Em 60 segundos, com a conta de luz na mão, você recebe o tamanho do sistema, o investimento e a economia estimada.",
+        "duration": "≈ 1 min"
+      },
+      "02": {
+        "number": "02",
+        "eyebrow": "Visita técnica",
+        "title": "Inspeção gratuita do telhado",
+        "body": "Engenheiro vai até sua casa, valida a orientação do telhado, a estrutura e o padrão de entrada da concessionária.",
+        "duration": "≈ 3 dias"
+      },
+      "03": {
+        "number": "03",
+        "eyebrow": "Projeto",
+        "title": "Projeto executivo 3D",
+        "body": "Projeto detalhado com layout dos painéis, inversor, stringbox e memorial de cálculo. Aprovado por você antes da instalação.",
+        "duration": "≈ 7 dias"
+      },
+      "04": {
+        "number": "04",
+        "eyebrow": "Homologação",
+        "title": "Homologação na concessionária",
+        "body": "Cuidamos de toda a burocracia com a distribuidora de energia. Você só assina digitalmente.",
+        "duration": "≈ 30 dias"
+      },
+      "05": {
+        "number": "05",
+        "eyebrow": "Instalação",
+        "title": "Instalação certificada",
+        "body": "Equipe própria, CREA-CA certificado, NR-35 e NR-10. Instalação em 2 a 5 dias sem desligar sua energia.",
+        "duration": "2-5 dias"
+      },
+      "06": {
+        "number": "06",
+        "eyebrow": "Monitoramento",
+        "title": "App + manutenção 25 anos",
+        "body": "Acompanhe geração, economia e status em tempo real. Manutenção preventiva anual inclusa por toda a vida útil.",
+        "duration": "25 anos"
+      }
+    },
+    "ctaTitle": "Quer ver cada passo no detalhe?",
+    "ctaBody": "Baixe nosso guia PDF de 24 páginas com tudo que você precisa saber antes de instalar.",
+    "ctaButton": "Receber guia por WhatsApp"
+  },
+  "calculator": {
+    "eyebrow": "Calculadora solar",
+    "heading": "Quanto você economiza por mês?",
+    "lede": "Arraste o slider da sua conta de luz. Ajustamos o estado e o tipo de telhado para uma estimativa real.",
+    "billLabel": "Sua conta de luz hoje",
+    "stateLabel": "Estado (UF)",
+    "roofLabel": "Tipo de telhado",
+    "outputEyebrow": "Seu sistema estimado",
+    "outputSize": "Tamanho do sistema",
+    "outputSavings": "Economia por mês",
+    "outputPayback": "Payback estimado",
+    "outputNPV": "Economia em 25 anos",
+    "panels": "painéis",
+    "perMonth": "/mês",
+    "years": "anos",
+    "disclaimer": "Estimativa ilustrativa. Tarifa média, irradiação típica e autossuficiência de 80%. Cotação real depende da conta e do telhado.",
+    "quoteCta": "Quero esse orçamento preciso"
   },
   "contact": {
-    "title": "Contato",
-    "body": "Página de contato provisória.",
-    "whatsapp": "Conversar no WhatsApp"
+    "title": "Vamos conversar?",
+    "body": "Atendimento humano de segunda a sábado, das 8h às 20h. Resposta em até 15 minutos no WhatsApp.",
+    "whatsapp": "Abrir WhatsApp",
+    "whatsappMessage": "Olá! Quero orçamento para energia solar na minha casa.",
+    "formTitle": "Ou preencha aqui",
+    "formName": "Nome",
+    "formPhone": "WhatsApp (com DDD)",
+    "formBill": "Conta de luz média (R$)",
+    "formState": "Estado",
+    "formSubmit": "Enviar e receber contato em 15 min",
+    "formSuccess": "Recebido! Em 15 minutos um especialista abre conversa no seu WhatsApp.",
+    "addressTitle": "Onde estamos",
+    "addressLine1": "Av. Brigadeiro Faria Lima, 3477",
+    "addressLine2": "Itaim Bibi, São Paulo / SP",
+    "addressLine3": "CEP 04538-133"
+  },
+  "cta": {
+    "label": "Falar no WhatsApp",
+    "defaultMessage": "Olá! Quero orçamento para energia solar na minha casa."
   },
   "footer": {
-    "mark": "Bold & Digital",
-    "tagline": "Demos de narrativa de scroll."
+    "tagline": "Energia solar residencial que cabe no bolso. Projeto, financiamento e instalação em até 90 dias.",
+    "navLabel": "Solaria",
+    "contactLabel": "Contato",
+    "langLabel": "Idioma",
+    "address": "São Paulo · SP · Brasil",
+    "copyright": "© 2026 Solaria Brasil Energia Solar Ltda. CNPJ 00.000.000/0001-00.",
+    "credits": "Demo Bold & Digital · Scroll-narrative framework"
   },
   "locale": {
     "switcher": "Idioma",

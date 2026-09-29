@@ -1,25 +1,181 @@
 {
   "nav": {
     "home": "Home",
-    "about": "About",
+    "howItWorks": "How it works",
+    "calculator": "Calculator",
     "contact": "Contact"
   },
   "home": {
-    "hero": "Demo hero goes here",
-    "tagline": "Scroll narrative skeleton — neutral base for vertical demos."
+    "heroEyebrow": "Residential solar energy",
+    "heroTitle": "Solar energy that fits your budget.",
+    "heroSubtitle": "Design, financing and installation in under 90 days. Save up to R$ 612 a month on your electricity bill and increase your home's value by up to 8%.",
+    "heroPrimaryCta": "Calculate my savings",
+    "heroSecondaryCta": "See how it works",
+    "stat1Value": "R$ 612",
+    "stat1Label": "Average monthly savings",
+    "stat2Value": "8 years",
+    "stat2Label": "Typical payback",
+    "stat3Value": "25 years",
+    "stat3Label": "System lifetime",
+    "narrativeEyebrow": "Four steps. One system ready.",
+    "narrativeHeading": "From your first simulation to a zero bill.",
+    "narrative": {
+      "sectionEyebrow": "Four steps. One system ready.",
+      "sectionHeading": "From your first simulation to a zero bill.",
+      "design": {
+        "eyebrow": "Step 01",
+        "title": "Tailored design",
+        "body": "We analyse your bill, your city's irradiation, and your roof. You receive a 3D simulation of the system before signing.",
+        "stat": "100%",
+        "statLabel": "Digital, no visit required"
+      },
+      "finance": {
+        "eyebrow": "Step 02",
+        "title": "Accessible financing",
+        "body": "Installments equal to or lower than your current electricity bill. 90-day grace period and rates starting at 0.99% per month.",
+        "stat": "0.99%",
+        "statLabel": "Rate starting from"
+      },
+      "install": {
+        "eyebrow": "Step 03",
+        "title": "Certified installation",
+        "body": "In-house team with CREA-CA certification. Installation in 2–5 days, no roof work and no power disconnection.",
+        "stat": "5 days",
+        "statLabel": "Typical install"
+      },
+      "save": {
+        "eyebrow": "Step 04",
+        "title": "Savings every month",
+        "body": "Real-time monitoring app. Energy credits automatically credited on your bill. 25-year linear warranty on the panels.",
+        "stat": "25 years",
+        "statLabel": "Linear warranty"
+      }
+    },
+    "caseEyebrow": "Who installed",
+    "caseHeading": "Brazilian families are already saving with Solaria.",
+    "cases": {
+      "silva": {
+        "city": "São Paulo, SP",
+        "kwp": "8.2 kWp",
+        "savings": "R$ 612/month",
+        "quote": "“Our electricity bill dropped from R$ 980 to R$ 368 in 60 days. The app shows everything, in real time.”"
+      },
+      "oliveira": {
+        "city": "Curitiba, PR",
+        "kwp": "6.4 kWp",
+        "savings": "R$ 488/month",
+        "quote": "“The financing fit our budget. After 5 years the system paid for itself and the bill went to zero.”"
+      },
+      "souza": {
+        "city": "Salvador, BA",
+        "kwp": "10.1 kWp",
+        "savings": "R$ 745/month",
+        "quote": "“Solaria handled everything: design, utility approval and monitoring. We just paid and enjoyed.”"
+      }
+    },
+    "finalCtaTitle": "Ready to zero out your electricity bill?",
+    "finalCtaBody": "Simulate in 60 seconds. No signup, no commitment.",
+    "finalCtaButton": "Talk to a specialist"
   },
-  "about": {
-    "title": "About",
-    "body": "Placeholder about page. Fork this skeleton to build a vertical-specific story."
+  "howItWorks": {
+    "eyebrow": "How it works",
+    "heading": "Six steps. Zero hassle.",
+    "lede": "From simulation to monitoring: what happens between your first click and your first zero bill.",
+    "steps": {
+      "01": {
+        "number": "01",
+        "eyebrow": "Simulation",
+        "title": "You simulate online",
+        "body": "In 60 seconds, with your electricity bill in hand, you get the system size, the investment and the estimated savings.",
+        "duration": "≈ 1 min"
+      },
+      "02": {
+        "number": "02",
+        "eyebrow": "Site visit",
+        "title": "Free roof inspection",
+        "body": "An engineer comes to your home, validates roof orientation, structure and the utility's entry standard.",
+        "duration": "≈ 3 days"
+      },
+      "03": {
+        "number": "03",
+        "eyebrow": "Design",
+        "title": "3D executive design",
+        "body": "Detailed design with panel layout, inverter, string box and calculation memo. You approve it before installation.",
+        "duration": "≈ 7 days"
+      },
+      "04": {
+        "number": "04",
+        "eyebrow": "Approval",
+        "title": "Utility approval",
+        "body": "We handle all the bureaucracy with the power distributor. You just sign digitally.",
+        "duration": "≈ 30 days"
+      },
+      "05": {
+        "number": "05",
+        "eyebrow": "Installation",
+        "title": "Certified installation",
+        "body": "In-house team, CREA-CA certified, NR-35 and NR-10. Installation in 2–5 days without disconnecting your power.",
+        "duration": "2–5 days"
+      },
+      "06": {
+        "number": "06",
+        "eyebrow": "Monitoring",
+        "title": "App + 25-year maintenance",
+        "body": "Track generation, savings and status in real time. Annual preventive maintenance included for the entire lifetime.",
+        "duration": "25 years"
+      }
+    },
+    "ctaTitle": "Want to see every step in detail?",
+    "ctaBody": "Download our 24-page PDF guide with everything you need to know before installing.",
+    "ctaButton": "Receive the guide on WhatsApp"
+  },
+  "calculator": {
+    "eyebrow": "Solar calculator",
+    "heading": "How much do you save per month?",
+    "lede": "Drag the slider to your current electricity bill. We adjust the state and roof type for a realistic estimate.",
+    "billLabel": "Your electricity bill today",
+    "stateLabel": "State",
+    "roofLabel": "Roof type",
+    "outputEyebrow": "Your estimated system",
+    "outputSize": "System size",
+    "outputSavings": "Monthly savings",
+    "outputPayback": "Estimated payback",
+    "outputNPV": "25-year savings",
+    "panels": "panels",
+    "perMonth": "/month",
+    "years": "years",
+    "disclaimer": "Illustrative estimate. Average tariff, typical irradiation and 80% self-consumption. Real quote depends on your bill and roof.",
+    "quoteCta": "Get an accurate quote"
   },
   "contact": {
-    "title": "Contact",
-    "body": "Placeholder contact page.",
-    "whatsapp": "Chat on WhatsApp"
+    "title": "Let's talk?",
+    "body": "Human support Monday to Saturday, 8am to 8pm. Reply within 15 minutes on WhatsApp.",
+    "whatsapp": "Open WhatsApp",
+    "whatsappMessage": "Hello! I'd like a quote for residential solar at my home.",
+    "formTitle": "Or fill in here",
+    "formName": "Name",
+    "formPhone": "WhatsApp (with area code)",
+    "formBill": "Average electricity bill (R$)",
+    "formState": "State",
+    "formSubmit": "Send and receive contact in 15 min",
+    "formSuccess": "Received! A specialist will reach out on your WhatsApp within 15 minutes.",
+    "addressTitle": "Where we are",
+    "addressLine1": "Av. Brigadeiro Faria Lima, 3477",
+    "addressLine2": "Itaim Bibi, São Paulo / SP",
+    "addressLine3": "ZIP 04538-133"
+  },
+  "cta": {
+    "label": "Chat on WhatsApp",
+    "defaultMessage": "Hello! I'd like a quote for residential solar at my home."
   },
   "footer": {
-    "mark": "Bold & Digital",
-    "tagline": "Scroll narrative demos."
+    "tagline": "Residential solar energy that fits your budget. Design, financing and installation in under 90 days.",
+    "navLabel": "Solaria",
+    "contactLabel": "Contact",
+    "langLabel": "Language",
+    "address": "São Paulo · SP · Brazil",
+    "copyright": "© 2026 Solaria Brasil Energia Solar Ltda. CNPJ 00.000.000/0001-00.",
+    "credits": "Bold & Digital demo · Scroll-narrative framework"
   },
   "locale": {
     "switcher": "Language",

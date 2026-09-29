@@ -1,20 +1,28 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Space_Grotesk, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const grotesk = Space_Grotesk({
+  variable: "--font-grotesk",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
+
+const plex = IBM_Plex_Sans({
+  variable: "--font-plex",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "scroll-shared",
+  title: "Solaria Brasil — Energia solar residencial que cabe no seu bolso",
   description:
-    "Bold & Digital scroll narrative skeleton — neutral base for vertical demos.",
+    "Energia solar residencial no Brasil. Projeto, financiamento e instalação em até 90 dias. Economize até R$ 612/mês na conta de luz.",
 };
 
-// Root layout renders the html/body shell + Inter font.
+// Root layout renders the html/body shell + brand fonts.
 // Locale-aware providers (NextIntlClientProvider, Nav, Footer,
 // SmoothScrollProvider, WhatsAppButton) live under [locale]/layout.tsx
 // so they can use the locale param to fetch messages and key the UI.
@@ -24,12 +32,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+    <html
+      lang="pt-BR"
+      className={`${grotesk.variable} ${plex.variable} h-full antialiased`}
+    >
       <head>
         {/* Inline theme init — runs before paint so we don't flash on reload */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var s=localStorage.getItem('scroll-shared-theme');var d=s==='dark'||(s==null&&window.matchMedia('(prefers-color-scheme: dark)').matches);var h=document.documentElement;if(d){h.setAttribute('data-theme','dark');h.classList.add('dark');}}catch(e){}})();`,
+            __html: `(function(){try{var s=localStorage.getItem('solar-theme');var d=s==='dark'||(s==null&&window.matchMedia('(prefers-color-scheme: dark)').matches);var h=document.documentElement;if(d){h.setAttribute('data-theme','dark');h.classList.add('dark');}}catch(e){}})();`,
           }}
         />
       </head>
